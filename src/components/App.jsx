@@ -19,15 +19,15 @@ export default class App extends Component {
     this.setState({ filter: e.target.value });
   };
 
-  addContact = array => {
-    const arrayToAdd = {
+  addContact = contact => {
+    const contactToAdd = {
       id: v4(),
-      ...array,
+      ...contact,
       // name: array.name,
       // number: array.number.replace(/(\d)(?=(\d{3})+(\D|$))/g, '$1-'),
     };
     this.setState(prevState => ({
-      contacts: [...prevState.contacts, arrayToAdd],
+      contacts: [...prevState.contacts, contactToAdd],
     }));
   };
 
